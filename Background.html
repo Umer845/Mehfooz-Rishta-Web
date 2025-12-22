@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mehfooz Rishta – Background & Religion</title>
+
+    <!---Bootstrap-->
+    <link rel="stylesheet" href="/assets/css/bootstrap/bootstrap.min.css">
+    <!---Aos-->
+    <link rel="stylesheet" href="/assets/css/aos/aos.css">
+    <!--DataTable-->
+    <link rel="stylesheet" href="/assets/css/datatables.css">
+    <!---Slick-->
+    <link rel="stylesheet" href="/assets/css/slick.min.css">
+    <!--FontAwesome-->
+    <link rel="stylesheet" href="/assets/font-awesome/icons/font-awesome.min.css">
+    <!--css-->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <!---Responsive-->
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+    <!----Select2-->
+    <link rel="stylesheet" href="/assets/css/Select2.css">
+
+
+
+</head>
+
+<body>
+    <div class="site-wrapper">
+
+        <!-- NAVBAR -->
+        <header class="navbar">
+            <div class="logo">
+                Mehfooz Rishta <img src="/assets/images/heart.png" alt="heart">
+            </div>
+            <nav class="nav-links">
+                <a href="#">Our Process</a>
+                <a href="#">Pricing</a>
+                <a href="#">About Us</a>
+                <a href="#">Contact Us</a>
+                <button class="app-btn">Mobile App</button>
+            </nav>
+        </header>
+
+        <!-- STEPPER -->
+        <div class="progress-wrapper">
+            <div class="progress-step completed">
+                <span class="circle green">✓</span>
+                <span>Account & Identity</span>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="progress-step active">
+                <span class="circle">2</span>
+                <span>Background & Religion</span>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="progress-step">
+                <span class="circle">3</span>
+                <span>Lifestyle & Photos</span>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="progress-step">
+                <span class="circle">4</span>
+                <span>Interests & Preferences</span>
+            </div>
+        </div>
+
+        <a class="back-link" href="/index.html"> <img src="/assets/images/arrow.png" alt="arrow"> Back</a>
+        <!-- FORM -->
+        <div class="Backgroundcontainer">
+
+            <h1>Background & Religion</h1>
+            <p class="subtitle">Share your religious background and practices</p>
+
+            <label class="sterik">What's your Sect? </label>
+            <select class="inputClick select2">
+                <option>Sunni</option>
+            </select>
+
+            <label class="sterik">Were you a born Muslim? </label>
+            <div class="Radio-group" id="BornMuslim">
+                <label><input type="radio" > Yes</label>
+                <label><input type="radio"> No, I converted to Islam.</label>
+                <label><input type="radio"> No, I am not Muslim.</label>
+            </div>
+            <span id="BornMuslimError" style="color:red;font-size:12px;font-weight:500;"></span>
+
+            <label class="sterik">How do you practice religion? </label>
+            <div class="Radio-group" id="Religion">
+                <label>
+                    <input type="radio"> Strictly
+                </label>
+                <label>
+                    <input type="radio"> Actively
+                </label>
+                <label><input type="radio"> Occasionally</label>
+                <label><input type="radio"> Not practicing at all</label>
+            </div>
+            <span id="ReligionError" style="color:red;font-size:12px;font-weight:500;"></span>
+
+            <div class="faith" id="Faith">
+                <p>Faith practices </p>
+                <span>(choose up to 8)</span>
+            </div>
+            <div class="chips">
+                <span class="active">Namaz (Prayer)</span>
+                <span>Fasting</span>
+                <span>Hajj</span>
+                <span>Zikr (Remembrance)</span>
+                <span>Charity (Zakat)</span>
+                <span>Quran Reading</span>
+                <span>Islamic Studies</span>
+                <span>Community Service</span>
+                <span>Charity (Zakat)</span>
+                <span >Namaz (Prayer)</span>
+                <span>Fasting</span>
+                <span>Hajj</span>
+                <span>Zikr (Remembrance)</span>
+                <span>Charity (Zakat)</span>
+                <span>Quran Reading</span>
+                <span>Islamic Studies</span>
+                <span>Community Service</span>
+                <span>Charity (Zakat)</span>
+                <span >Namaz (Prayer)</span>
+                <span>Fasting</span>
+                <span>Hajj</span>
+                <span>Zikr (Remembrance)</span>
+                <span>Charity (Zakat)</span>
+                <span>Quran Reading</span>
+                <span>Islamic Studies</span>
+                <span>Community Service</span>
+                <span>Charity (Zakat)</span>
+            </div>
+            <span id="FaithError" style="color:red;font-size:12px;font-weight:500;"></span>
+
+            <label>Do you only eat halal food?</label>
+            <div class="radio-group inline" id="Food">
+                <label><input type="radio"> Yes</label>
+                <label><input type="radio"> No</label>
+                <label><input type="radio"> Prefer not to say</label>
+            </div>
+            <span id="FoodError" style="color:red;font-size:12px;font-weight:500;"></span>
+
+            <label>Do you smoke?</label>
+            <div class="radio-group inline" id="smoke">
+                <label><input type="radio"> Yes</label>
+                <label><input type="radio"> No</label>
+                <label><input type="radio"> Occasionally</label>
+            </div>
+            <span id="smokeError" style="color:red;font-size:12px;font-weight:500;"></span>
+
+            <label>Do you drink alcohol?</label>
+            <div class="radio-group inline" id="alcohol">
+                <label><input type="radio"> Yes</label>
+                <label><input type="radio" > No</label>
+                <label><input type="radio"> Occasionally</label>
+            </div>
+            <span id="alcoholError" style="color:red;font-size:12px;font-weight:500;"></span>
+
+            <div class="actions">
+                <button class="btn-outline">Back</button>
+                <button class="btn-primary" onclick="LoadData()">Save & Continue</button>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!---Script-->
+    
+
+    <!---Custom js-->
+    <script src="/assets/js/Background.js"></script>
+    <!---AOS Animation-->
+    <script src="/assets/js/aos.js"></script>
+    <!---Datatable-->
+    <script src="/assets/js/datatables.js"></script>
+    <!-- counter -->
+    <script src="/assets/js/waypoints.min.js"></script>
+    <!-- Framework javascript -->
+    <script src="/assets/js/bootstrap/bootstrap.min.js"></script>
+    <!-- slider -->
+    <script src="/assets/js/slick.min.js"></script>
+    <!--Select2-->
+    <script src="/assets/js/datatables.js"></script>
+
+</body>
+
+</html>

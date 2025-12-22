@@ -1,0 +1,244 @@
+/* =====================================
+   GLOBAL RESPONSIVE FIXES (REQUIRED)
+===================================== */
+.progress-wrapper {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.progress-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.progress-step,
+.line {
+  flex-shrink: 0;
+}
+
+.container {
+  width: 100%;
+}
+
+/* ===============================
+   320px – 379px (Very Small Phones)
+================================ */
+@media (max-width: 420px) {
+  /* Navbar */
+  .navbar {
+    flex-direction: column;
+    padding: 12px 16px;
+    gap: 12px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  /* Steps */
+  .progress-wrapper {
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .progress-step {
+    font-size: 12px;
+  }
+
+  .circle {
+    width: 20px;
+    height: 20px;
+    font-size: 11px;
+  }
+
+  .line {
+    width: 20px;
+  }
+
+  /* Social buttons */
+  .social-btns {
+    flex-direction: column;
+  }
+
+  .social-btn {
+    width: 100%;
+  }
+
+  /* Inputs */
+  .two-inputs,
+  .phone-row {
+    flex-direction: column;
+  }
+
+  .verify-btn {
+    width: 100%;
+  }
+
+  /* Submit button */
+  .submit-btn {
+    padding: 12px;
+    justify-content: center;
+  }
+}
+
+/* ===============================
+   420px – 479px
+================================ */
+@media (min-width: 421px) and (max-width: 520px) {
+  .progress-step {
+    font-size: 13px;
+  }
+
+  .line {
+    width: 26px;
+  }
+
+  .social-btns {
+    flex-direction: column;
+  }
+
+  .social-btn {
+    width: 100%;
+  }
+
+  .submit-btn {
+    padding: 12px;
+    justify-content: center;
+  }
+}
+
+
+/* ===============================
+   520px – 599px
+================================ */
+@media (min-width: 521px) and (max-width: 600px) {
+  .line {
+    width: 32px;
+  }
+
+  .container {
+    max-width: 95%;
+  }
+
+  .submit-btn {
+    padding: 12px;
+    justify-content: center;
+  }
+}
+
+
+/* ===============================
+   600px – 719px
+================================ */
+@media (min-width: 601px) and (max-width: 720px) {
+  .line {
+    width: 40px;
+  }
+
+  .container {
+    max-width: 90%;
+  }
+
+  .submit-btn {
+    padding: 12px;
+    justify-content: center;
+  }
+}
+
+/* ===============================
+   720px – 1023px (Tablets)
+================================ */
+@media (min-width: 721px) and (max-width: 1024px) {
+  .progress-wrapper {
+    justify-content: center;
+  }
+
+  .line {
+    width: 50px;
+  }
+
+  .container {
+    max-width: 85%;
+  }
+
+  .submit-btn {
+    padding: 12px;
+    justify-content: center;
+  }
+}
+
+
+/* ===============================
+   1024px – 1279px (Small Laptops)
+================================ */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .container {
+    max-width: 75%;
+  }
+
+  .line {
+    width: 60px;
+  }
+
+  .submit-btn {
+    padding: 12px;
+    justify-content: center;
+  }
+}
+
+/* ===============================
+   1280px – 1439px
+================================ */
+@media (min-width: 1281px) {
+  .container {
+    max-width: 628px; /* your original design */
+  }
+
+  .line {
+    width: 70px;
+  }
+
+  .submit-btn {
+    padding: 12px;
+    justify-content: center;
+  }
+}
+
+
+
+
+/* ================= Background & Religion START ================= */
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .progress-wrapper {
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .radio-group.inline {
+    flex-direction: column;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+}
+
+/* ================= Background & Religion START ================= */
+
+

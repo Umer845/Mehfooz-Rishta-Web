@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mehfooz Rishta – Lifestyle & Photos </title>
+
+    <!---Bootstrap-->
+    <link rel="stylesheet" href="/assets/css/bootstrap/bootstrap.min.css">
+    <!---Aos-->
+    <link rel="stylesheet" href="/assets/css/aos/aos.css">
+    <!--DataTable-->
+    <link rel="stylesheet" href="/assets/css/datatables.css">
+    <!---Slick-->
+    <link rel="stylesheet" href="/assets/css/slick.min.css">
+    <!--FontAwesome-->
+    <link rel="stylesheet" href="/assets/font-awesome/icons/font-awesome.min.css">
+    <!--css-->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <!---Responsive-->
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+    <!----Select2-->
+    <link rel="stylesheet" href="/assets/css/Select2.css">
+
+
+
+</head>
+
+<body>
+    <div class="site-wrapper">
+
+        <!-- NAVBAR -->
+        <header class="navbar">
+            <div class="logo">
+                Mehfooz Rishta <img src="/assets/images/heart.png" alt="heart">
+            </div>
+            <nav class="nav-links">
+                <a href="#">Our Process</a>
+                <a href="#">Pricing</a>
+                <a href="#">About Us</a>
+                <a href="#">Contact Us</a>
+                <button class="app-btn">Mobile App</button>
+            </nav>
+        </header>
+
+        <!-- STEPPER -->
+        <div class="progress-wrapper">
+            <div class="progress-step completed">
+                <span class="circle green">✓</span>
+                <span>Account & Identity</span>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="progress-step completed">
+                <span class="circle green">✓</span>
+                <span>Background & Religion</span>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="progress-step active">
+                <span class="circle">3</span>
+                <span>Lifestyle & Photos</span>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="progress-step">
+                <span class="circle">4</span>
+                <span>Interests & Preferences</span>
+            </div>
+        </div>
+
+        <a class="back-link" href="/Background.html"> <img src="/assets/images/arrow.png" alt="arrow"> Back</a>
+        <!-- FORM -->
+        <div class="Lifecontainer">
+
+            <h1>Lifestyle & Photos</h1>
+            <p class="subtitle">Build trust by sharing more about yourself</p>
+
+            <label class="sterik">What's your profession? </label>
+            <input type="text" class="inputClick" id="Profession" placeholder="e.g. Software Engineer, Doctor">
+            <span id="ProfessionError" style="color:red;font-size:12px;font-weight:500;"></span>
+
+            <label class="sterik">Education level </label>
+            <select class="inputClick select2" id="EducationLevel">
+                <option value="" class="inputClick select2"></option>
+                <option value="High School">High School</option>
+            </select>
+            <span id="EducationLevelError" style="color:red;font-size:12px;font-weight:500;"></span>
+
+            <label class="sterik">How tall are you? </label>
+            <div class="height-row">
+                <div class="col-md-10">
+                    <input type="text" class="inputClick numbers" id="tall" placeholder="173" />
+                </div>
+                <div class="col-md-2">
+                    <select class=" select2">
+                        <option>cm</option>
+                    </select>
+                </div>
+            </div>
+            <span id="tallError" style="color:red;font-size:12px;font-weight:500; "></span>
+
+            <div class="nationality d-flex">
+                <label class="sterik">What's your nationality? </label>
+                <span>(up to 2)</span>
+            </div>
+            <input type="text" class="inputClick" id="nationality" placeholder="Pakistani">
+            <span id="nationalityError" style="color:red;font-size:12px;font-weight:500;"></span>
+
+            <label class="sterik">Where did you grow up? </label>
+            <input type="text" class="inputClick" id="grow" placeholder="Pakistan">
+            <span id="growError" style="color:red;font-size:12px;font-weight:500;"></span>
+
+            <div class="faith" id="ethnicity">
+                <p>What's your ethnicity? </p>
+                <span>(up to 2)</span>
+            </div>
+            <div class="chips">
+                <span>Arab</span>
+                <span>South Asian</span>
+                <span>Southeast Asian</span>
+                <span>African</span>
+                <span>Caucasian</span>
+                <span>Hispanic/Latino</span>
+                <span>Mixed</span>
+                <span>Other</span>
+            </div>
+            <span id="ethnicityError" style="color:red;font-size:12px;font-weight:500;"></span>
+
+            <label>Do you have children?</label>
+            <div class="radio-group inline" id="children">
+                <label><input type="radio"> Yes</label>
+                <label><input type="radio"> No</label>
+                <label><input type="radio"> Prefer not to say</label>
+            </div>
+            <span id="childrenError" style="color:red;font-size:12px;font-weight:500;"></span>
+
+            <label>Would you move abroad for marriage?</label>
+            <div class="radio-group inline" id="marriage">
+                <label><input type="radio"> Yes</label>
+                <label><input type="radio"> No</label>
+                <label><input type="radio"> Maybe</label>
+            </div>
+            <span id="marriageError" style="color:red;font-size:12px;font-weight:500;"></span>
+
+            <div class="faith" id="Interests">
+                <p>Interests </p>
+                <span>(select up to 15)</span>
+            </div>
+            <div class="chips">
+                <span>Reading</span>
+                <span>Travel</span>
+                <span>Cooking</span>
+                <span>Sports</span>
+                <span>Music</span>
+                <span>Art</span>
+                <span>Photography</span>
+                <span>Fitness</span>
+                <span>Hiking</span>
+                <span>Gaming</span>
+                <span>Movies</span>
+                <span>Writing</span>
+                <span>Dancing</span>
+                <span>Volunteering</span>
+                <span>Technology</span>
+                <span>Fashion</span>
+                <span>Food</span>
+                <span>Nature</span>
+                <span>Meditation</span>
+                <span>Learning</span>
+            </div>
+            <span id="InterestsError" style="color:red;font-size:12px;font-weight:500;"></span>
+
+
+            <div class="nationality d-flex">
+                <label>How would you describe your personality? </label>
+                <span>(optional)</span>
+            </div>
+            <input type="text" class="inputClick" id="Personality" placeholder="I am good">
+            <span id="PersonalityError" style="color:red;font-size:12px;font-weight:500;"></span>
+
+
+            <div class="nationality d-flex">
+                <label> Add bio </label>
+                <span>(150-500 characters)</span>
+            </div>
+            <textarea name="" id="">Tell others about yourself...</textarea>
+            <span class="char-text">0 / 500 characters</span>
+
+
+            <div class="photos d-flex">
+                <label class="sterik">Add photos </label>
+                <span>(minimum 3)</span>
+            </div>
+            <div class="photo-upload">
+                <div class="upload-box" id="photo">
+                    <img src="/assets/images/upload.png" alt="upload-icon">
+                    <p>Upload Photo</p>
+                </div>
+            </div>
+            <span class="photo-text">Uploaded 0 of 6 photos (minimum 3 required)</span> <br />
+            <span class="photo-text">Accepted formats: JPG, PNG. Max size: 5MB per photo</span> <br />
+            <span id="photoError" style="color:red;font-size:12px;font-weight:500;"></span>
+
+            <div class="actions">
+                <button class="btn-outline">Back</button>
+                <button class="btn-primary" onclick="LoadData()">Save & Continue</button>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!---Script-->
+
+
+    <!---Custom js-->
+    <script src="/assets/js/life.js"></script>
+    <!---AOS Animation-->
+    <script src="/assets/js/aos.js"></script>
+    <!---Datatable-->
+    <script src="/assets/js/datatables.js"></script>
+    <!-- counter -->
+    <script src="/assets/js/waypoints.min.js"></script>
+    <!-- Framework javascript -->
+    <script src="/assets/js/bootstrap/bootstrap.min.js"></script>
+    <!-- slider -->
+    <script src="/assets/js/slick.min.js"></script>
+    <!--Select2-->
+    <script src="/assets/js/datatables.js"></script>
+
+</body>
+
+</html>
