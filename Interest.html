@@ -80,7 +80,116 @@
             <h1>Interest & Preferences</h1>
             <p class="subtitle">Build trust by sharing more about yourself</p>
 
-            
+            <label>Partner age range</label>
+            <div class="range">
+                <input type="number" id="ageMin" value="18" min="18">
+                <span>to</span>
+                <input type="number" id="ageMax" value="50" max="80">
+                <span>years</span>
+            </div>
+            <span class="error" id="ageError"></span>
+
+            <!-- LOCATION -->
+            <label>Partner location preferences <small>(select all that apply)</small></label>
+            <div class="chips multi" id="location">
+                <span>United States</span>
+                <span>United Kingdom</span>
+                <span>Canada</span>
+                <span>Australia</span>
+                <span>Pakistan</span>
+                <span>India</span>
+                <span>Saudi Arabia</span>
+                <span>UAE</span>
+            </div>
+            <span class="error" id="locationError"></span>
+
+            <!-- SECT -->
+            <label>Partner sect preferences <small>(select 1)</small></label>
+            <div class="chips single" id="sect">
+                <span>Sunni</span>
+                <span>Shia</span>
+                <span>Ahmadiyya</span>
+                <span>Sufi</span>
+                <span>Just Muslim</span>
+                <span>Any</span>
+            </div>
+            <span class="error" id="sectError"></span>
+
+            <!-- ETHNICITY -->
+            <label>Partner ethnicity preferences <small>(select all that apply)</small></label>
+            <div class="chips multi" id="ethnicity">
+                <span>Arab</span>
+                <span>South Asian</span>
+                <span>Southeast Asian</span>
+                <span>African</span>
+                <span>Caucasian</span>
+                <span>Mixed</span>
+                <span>Any</span>
+            </div>
+            <span class="error" id="ethnicityError"></span>
+
+            <!-- EDUCATION -->
+            <label>Partner education preferences <small>(select 1)</small></label>
+            <div class="chips single" id="education">
+                <span>High School</span>
+                <span>Some College</span>
+                <span>Bachelor's Degree</span>
+                <span>Master's Degree</span>
+                <span>PhD</span>
+                <span>Any</span>
+            </div>
+            <span class="error" id="educationError"></span>
+
+            <!-- PROFESSION -->
+            <label>Partner profession preference <small>(optional)</small></label>
+            <input type="text" placeholder="Any profession">
+
+            <!-- RELOCATE -->
+            <label>Willing to relocate?</label>
+            <div class="radio-group" id="relocate">
+                <label><input type="radio" name="relocate"> Yes</label>
+                <label><input type="radio" name="relocate"> No</label>
+                <label><input type="radio" name="relocate"> Maybe</label>
+            </div>
+            <span class="error" id="relocateError"></span>
+
+            <!-- CHILDREN -->
+            <label>Open to partner with children?</label>
+            <div class="radio-group" id="children">
+                <label><input type="radio" name="children"> Yes</label>
+                <label><input type="radio" name="children"> No</label>
+                <label><input type="radio" name="children"> Maybe</label>
+            </div>
+            <span class="error" id="childrenError"></span>
+
+            <!-- DIGITAL SIGNATURE -->
+            <label>Digital Signature *</label>
+            <div class="signature-box"></div>
+            <span class="error" id="signatureError"></span>
+
+            <!-- TERMS -->
+            <div class="checkbox">
+                <input type="checkbox" id="terms">
+                <span>I accept the terms and conditions</span>
+            </div>
+            <span class="error" id="termsError"></span>
+
+            <!-- REVIEW -->
+            <div class="review">
+                <strong>Review Your Profile</strong>
+                <div><span>Name:</span><span>Muhammad Umer Iqbal</span></div>
+                <div><span>Gender:</span><span>Man</span></div>
+                <div><span>Phone:</span><span>+92 320 8707124</span></div>
+                <div><span>Sect:</span><span>Sunni</span></div>
+                <div><span>Photos:</span><span>3 uploaded</span></div>
+            </div>
+
+            <div class="actions">
+                <button class="btn btn-outline">Back</button>
+                <button class="btn btn-primary" onclick="submitForm()">Submit & Finish</button>
+            </div>
+
+
         </div>
 
     </div>

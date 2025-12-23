@@ -46,22 +46,19 @@ document.querySelectorAll(".chips span").forEach(chip => {
     chip.addEventListener("click", function () {
         this.classList.toggle("active");
 
-        // Clear related error (ethnicity / interests)
-        const container = this.closest(".chips");
-        if (container) {
-            if (container === document.querySelectorAll(".chips")[0]) {
-                document.getElementById("ethnicityError").textContent = "";
-            }
-            if (container === document.querySelectorAll(".chips")[1]) {
-                document.getElementById("InterestsError").textContent = "";
-            }
+        const chips = document.querySelectorAll(".chips");
+        if (this.closest(".chips") === chips[0]) {
+            document.getElementById("ethnicityError").textContent = "";
+        }
+        if (this.closest(".chips") === chips[1]) {
+            document.getElementById("InterestsError").textContent = "";
         }
     });
 });
 
 
 /* =====================================================
-   PHOTO UPLOAD LOGIC
+   PHOTO UPLOAD LOGIC + THUMBNAILS + VERIFY SECTION
 ===================================================== */
 const fileInput = document.createElement("input");
 fileInput.type = "file";
@@ -70,47 +67,93 @@ fileInput.multiple = true;
 fileInput.style.display = "none";
 document.body.appendChild(fileInput);
 
-document.getElementById("photo").addEventListener("click", function () {
-    fileInput.click();
-});
+const uploadBox = document.getElementById("photo");
+const photoList = document.querySelector(".photo-list"); // NEW
+const photoText = document.querySelector(".photo-text");
+const photoError = document.getElementById("photoError");
+const verifySection = document.querySelector(".photo-verification");
+
+
+if (verifySection) verifySection.style.display = "none";
+
+uploadBox.addEventListener("click", () => fileInput.click());
 
 fileInput.addEventListener("change", function () {
 
     const files = Array.from(fileInput.files);
-    const error = document.getElementById("photoError");
 
     for (let file of files) {
 
         if (uploadedPhotos.length >= MAX_PHOTOS) {
-            error.textContent = "You can upload up to 6 photos only.";
+            photoError.textContent = "You can upload up to 6 photos only.";
             break;
         }
 
         if (!["image/jpeg", "image/png"].includes(file.type)) {
-            error.textContent = "Only JPG and PNG images are allowed.";
+            photoError.textContent = "Only JPG and PNG images are allowed.";
             continue;
         }
 
         if (file.size > MAX_SIZE) {
-            error.textContent = "Each image must be less than 5MB.";
+            photoError.textContent = "Each image must be less than 5MB.";
             continue;
         }
 
         uploadedPhotos.push(file);
+        renderPhoto(file);
     }
 
     updatePhotoText();
+    toggleVerification();
 
     if (uploadedPhotos.length >= MIN_PHOTOS) {
-        error.textContent = "";
+        photoError.textContent = "";
     }
 
     fileInput.value = "";
 });
 
+
+function renderPhoto(file) {
+    const reader = new FileReader();
+
+    reader.onload = function (e) {
+        const wrapper = document.createElement("div");
+        wrapper.className = "photo-thumb";
+
+        wrapper.innerHTML = `
+            <img src="${e.target.result}">
+            <button class="remove-photo">✕</button>
+        `;
+
+        wrapper.querySelector(".remove-photo").addEventListener("click", () => {
+            const index = [...photoList.children].indexOf(wrapper);
+            uploadedPhotos.splice(index, 1);
+            wrapper.remove();
+            updatePhotoText();
+            toggleVerification();
+        });
+
+        // ✅ ADD OUTSIDE UPLOAD BOX
+        photoList.appendChild(wrapper);
+    };
+
+    reader.readAsDataURL(file);
+}
+
+
+
 function updatePhotoText() {
-    document.querySelector(".photo-text").textContent =
+    photoText.textContent =
         `Uploaded ${uploadedPhotos.length} of ${MAX_PHOTOS} photos (minimum ${MIN_PHOTOS} required)`;
+}
+
+
+function toggleVerification() {
+    if (!verifySection) return;
+
+    verifySection.style.display =
+        uploadedPhotos.length >= MIN_PHOTOS ? "flex" : "none";
 }
 
 
@@ -217,13 +260,11 @@ const validate = {
     },
 
     photo: () => {
-        const error = document.getElementById("photoError");
-
         if (uploadedPhotos.length < MIN_PHOTOS) {
-            error.textContent = "Please upload at least 3 photos.";
+            photoError.textContent = "Please upload at least 3 photos.";
             return false;
         }
-        error.textContent = "";
+        photoError.textContent = "";
         return true;
     }
 };
@@ -233,15 +274,11 @@ const validate = {
    RADIO VALIDATION HELPER
 ===================================================== */
 function radioValidate(id) {
-
-    const radios = document
-        .getElementById(id)
-        .querySelectorAll("input[type='radio']");
-
+    const radios = document.getElementById(id).querySelectorAll("input[type='radio']");
     const error = document.getElementById(id + "Error");
 
     let checked = false;
-    radios.forEach(r => { if (r.checked) checked = true; });
+    radios.forEach(r => checked ||= r.checked);
 
     if (!checked) {
         error.textContent = "Please select one option.";
